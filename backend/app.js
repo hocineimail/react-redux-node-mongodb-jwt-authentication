@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-
+const users = require('./routes/user'); 
 
 mongoose.connect("mongodb://localhost:27017/projectexams").then(
     () => {console.log('Database is connected') },
@@ -10,6 +10,13 @@ mongoose.connect("mongodb://localhost:27017/projectexams").then(
 );
 
 const app = express();
+
+
+app.use(passport.initialize());
+require('./passport')(passport);
+
+app.use('/api/users', users);
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
