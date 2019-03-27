@@ -1,26 +1,25 @@
 // Navbar.js
 
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
     render() {
         return(
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="container"> 
-                <a className="navbar-brand" href="#">Redux Auth</a>
+                <Link className="navbar-brand" to="/">Redux Node Auth</Link>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Home</a>
+                            <Link className="nav-link" to="/register">Sign Up</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Register</a>
+                            <Link className="nav-link" to="/login">Sign ip</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Login</a>
+                            <Link className="nav-link" to="/">Home</Link>
                         </li>
                     </ul>
-                </div>
                 </div>
             </nav>
         )
